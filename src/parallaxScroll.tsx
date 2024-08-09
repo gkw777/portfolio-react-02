@@ -1,9 +1,12 @@
+import useScrollFadeIn from 'hooks/useScrollFadeIn';
+
 const ParallaxScroll = () => {
+  const animate = useScrollFadeIn('up', 1, 1, 0.2);
   return (
     <>
       <section className='scene one'>
-        <header className='title-header'>
-          <pre>
+        <header>
+          <pre {...animate}>
             <h1>
               "아름다운 꽃이라도 향기가 없는 꽃이 있듯이,
               <br />
@@ -15,6 +18,7 @@ const ParallaxScroll = () => {
           </pre>
         </header>
         <Content
+          delay={1.5}
           discript='아무리 알고 있는 것이 풍부하고 정교하더라도 실제로 적용하지 않으면 내 것이 될 수 없다. 
   실행한다는 것은 우리의 능력과 자신감을 강화시키는 일이 된다. 
   성공하든 실패하든 중요한 것이 아니다.'
@@ -46,11 +50,19 @@ const ParallaxScroll = () => {
 
 export default ParallaxScroll;
 
-const Content = ({ discript, ...argv }: { discript: string }) => {
+interface contentProps {
+  discript: string;
+  delay?: number;
+}
+
+const Content = ({ discript, delay = 0 }: contentProps) => {
+  const animate = useScrollFadeIn('up', 1, delay, 0.2);
   return (
     <div className='discription'>
-      <p>{discript}</p>
-      <div className='discription-bg' />
+      <div {...animate}>
+        <p>{discript}</p>
+        <div className='discription-bg' />
+      </div>
     </div>
   );
 };

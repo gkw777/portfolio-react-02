@@ -61,7 +61,7 @@ const useScrollFadeIn = (direction = 'up', duration = 1, delay = 0, scroll_thres
     return () => observer && observer.current?.disconnect();
   }, [onScroll, scroll_threshold]);
 
-  return { ref: element, style: { opacity: 0, display: 'flex', transform: handleDirection(direction) } } as any;
+  return { ref: element, style: { opacity: 0, transform: handleDirection(direction) } } as any;
 };
 
 export default useScrollFadeIn;
