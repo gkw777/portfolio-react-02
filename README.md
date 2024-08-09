@@ -24,5 +24,4 @@ ver 1.0.1
    - 화면이 나타날때 텍스트에 애니메이션 효과 적용
 
 ### 데모
-
-![패럴랙스 스크롤링](https://github.com/user-attachments/assets/0b072791-2065-4494-b2e1-b3a05ee66033)
+![패럴랙스 스크롤링](https://github.com/user-attachments/assets/c60effa7-aa0a-41aa-bcdf-2aac28ee44d0)
